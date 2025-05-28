@@ -3,6 +3,13 @@ package com.example.android_sample_app
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
+import androidx.test.core.app.ActivityScenario // Import for ActivityScenario
+import androidx.test.espresso.Espresso.onView // Import for Espresso onView
+import androidx.test.espresso.assertion.ViewAssertions.matches // Import for matches
+import androidx.test.espresso.matcher.ViewMatchers.withText // Import for withText
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed // Import for isDisplayed
+
+
 import org.junit.Test
 import org.junit.runner.RunWith
 

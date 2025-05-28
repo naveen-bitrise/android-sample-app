@@ -53,4 +53,16 @@ dependencies {
     androidTestImplementation libs.androidx.ui.test.junit4
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
+
+    // Add AndroidX Test Core for ActivityScenario
+    androidTestImplementation "androidx.test:core:1.5.0"
+
+    // Add Espresso for UI testing
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+
+    // Add JUnit for assertions
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+
+    // Add Compose testing dependencies (if needed for Compose UI)
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.5.0"
 }
