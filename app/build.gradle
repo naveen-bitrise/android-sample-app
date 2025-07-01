@@ -34,6 +34,26 @@ android {
     buildFeatures {
         compose true
     }
+    // --- GMD Configuration Starts Here (Groovy DSL) ---
+    testOptions {
+        managedDevices {
+            devices {
+                // Register a new Gradle Managed Device for our CI tests.
+                // The task name will be derived from this, e.g., "pixel4gbCiTestDebugAndroidTest".
+                pixel4gbCiTest(com.android.build.api.dsl.ManagedVirtualDevice) {
+                    // This is the critical link. The device name here MUST exactly match
+                    // the name we generate in the bitrise.yml script step.
+                    device = "ci_pixel_4gb"
+
+                    // Use an API level and system image appropriate for your tests.
+                    // "google-atd" (Automated Test Device) images are optimized for performance in CI.
+                    apiLevel = 36
+                    systemImageSource = "google"
+                }
+            }
+        }
+    }
+    // --- GMD Configuration Ends Here ---
 }
 
 dependencies {
