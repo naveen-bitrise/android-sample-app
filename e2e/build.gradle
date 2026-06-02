@@ -1,0 +1,26 @@
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+kotlin {
+    jvmToolchain(11)
+}
+
+dependencies {
+    testImplementation libs.appium.java.client
+    testImplementation libs.junit
+}
+
+test {
+    // Pass these on the command line: -Dappium.server.url=... -Dapk.path=...
+    systemProperty 'appium.server.url',
+        System.getProperty('appium.server.url', 'http://127.0.0.1:4723')
+    systemProperty 'apk.path',
+        System.getProperty('apk.path',
+            "${rootProject.projectDir}/app/build/outputs/apk/debug/app-debug.apk")
+}
